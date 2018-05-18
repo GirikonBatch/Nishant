@@ -7,7 +7,7 @@ public class zemailsRestoreExt {
 	List<EmailMessage> NewEmailList=new List<EmailMessage>();
 	List<Attachment> Parserfiles1=new List<Attachment>();
     integer i=0;
-    public void Restore()
+    public PageReference Restore()
     {	
           Map<integer,List<id>> EmailAttachementMap=new Map<integer,List<id>>();
         Parserfiles1=[Select Id,ParentId,Name,body,ContentType From Attachment where name like '%Parser.txt' and ParentId=:CurrentPageID];
@@ -141,6 +141,8 @@ public class zemailsRestoreExt {
        insert atmList; 
         delete atmLis;
         del();
+        PageReference pg=new PageReference('/'+ CurrentPageID);
+        return pg;
     }//restore fuction
     
      

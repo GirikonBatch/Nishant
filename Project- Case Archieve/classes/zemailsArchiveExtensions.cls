@@ -8,7 +8,7 @@ public class zemailsArchiveExtensions {
     public void Yes()
     
     {
-    System.debug('Nishant');  
+    System.debug('Nishant gupta$$$$dfgdfgdfdgxcgdffghdhdghgh');  
     List<EmailMessage> DeletedMessage=new List<EmailMessage>();
         List<Attachment> EmailAttachment=new List<Attachment>();
         eMessage=[SELECT ActivityId,EmailNumber__c,BccAddress,CcAddress,CreatedById,CreatedDate,FromAddress,
@@ -32,7 +32,7 @@ public class zemailsArchiveExtensions {
          Delete DeletedMessage;
        //Database.emptyRecycleBin(DeletedMessage);
     }
-    public void parserfile()
+    public PageReference parserfile()
     {
         
         eMessage=[SELECT ActivityId,EmailNumber__c,BccAddress,CcAddress,CreatedById,CreatedDate,FromAddress,
@@ -91,6 +91,8 @@ public class zemailsArchiveExtensions {
         
       insert ParserAtt;
         Yes();
+        PageReference pg=new PageReference('/'+ CurrentPageID);
+        return pg;
         
         
     } //parser file

@@ -1,0 +1,19 @@
+{
+    "autoRefresh": false,
+    "browser": "Google Chrome Canary",
+    "pollTimeout": 1200,
+    "debugOnly": true,
+    "debugFilter": "USER_DEBUG|FATAL_ERROR",
+    "apiVersion": "38.0",
+    "deployOptions": {
+        "checkOnly": false,
+        "testLevel": "runLocalTests",
+        "verbose": false,
+        "ignoreWarnings": true
+    },
+    "username": "nishant.aggarwal@girikon.com",
+    "password": "girikons@123svEqvXme86BOwTvgAW2r32ugW",
+    "url": "https://login.salesforce.com",
+    "autoCompile": true,
+    "src": "src"
+}
