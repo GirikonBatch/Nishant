@@ -1,0 +1,13 @@
+<apex:page standardController="Case" extensions="zemailsArchiveExtensions">
+  
+  <apex:form >
+ 
+  <br />
+  <b>
+  Are you sure you would like to Process the Archive Process :  </b>
+      <br /><br />
+  <apex:commandButton value="Yes" action="{!parserfile}" oncomplete="window.top.close();window.top.opener.location.reload();"/>
+      &nbsp;&nbsp;
+  <apex:commandButton value="No" onclick="window.top.close();"/>
+  </apex:form>
+</apex:page>

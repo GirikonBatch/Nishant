@@ -6,7 +6,10 @@ public class zemailsArchiveExtensions {
     {  CurrentPageID=ApexPages.currentPage().getParameters().get('id'); 
     }
     public void Yes()
-    {  List<EmailMessage> DeletedMessage=new List<EmailMessage>();
+    
+    {
+    System.debug('Nishant');  
+    List<EmailMessage> DeletedMessage=new List<EmailMessage>();
         List<Attachment> EmailAttachment=new List<Attachment>();
         eMessage=[SELECT ActivityId,EmailNumber__c,BccAddress,CcAddress,CreatedById,CreatedDate,FromAddress,
             FromName,HasAttachment,Headers,HtmlBody,Id,Incoming,IsClientManaged,
@@ -26,7 +29,7 @@ public class zemailsArchiveExtensions {
                     System.debug('TEST');
         }
         insert EmailAttachment;
-       	 Delete DeletedMessage;
+         Delete DeletedMessage;
        //Database.emptyRecycleBin(DeletedMessage);
     }
     public void parserfile()

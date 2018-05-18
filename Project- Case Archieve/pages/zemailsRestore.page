@@ -1,0 +1,14 @@
+<apex:page standardController="Case" extensions="zemailsRestoreExt">
+   
+  
+  <apex:form >
+ 
+  <br />
+  <b>
+  Are you sure you would like to Process the Restore Process :  </b>
+      <br /><br />
+  <apex:commandButton value="Yes" action="{!Restore}" oncomplete="window.top.close();"/>
+      &nbsp;&nbsp;
+  <apex:commandButton value="No" onclick="window.top.close();"/>
+  </apex:form>
+</apex:page>
