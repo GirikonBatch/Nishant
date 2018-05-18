@@ -23,6 +23,7 @@ public class zemailsArchiveExtensions {
                                                         'Subject :'+e.Subject+'<br />'+'Text Body:'+e.TextBody+'<br />');
                     EmailAttachment.add(attachmentPdfEmail);  
                     DeletedMessage.add(e);
+                    System.debug('TEST');
         }
         insert EmailAttachment;
        	 Delete DeletedMessage;
@@ -68,7 +69,7 @@ public class zemailsArchiveExtensions {
              {// add this.........................
                  
                  Atid+=a.id+';';
-                 System.debug('========================='+Atid);
+                 System.debug('===============FGHGHG=========='+Atid);
                  
              }//second attachement loop
                   Attachment parserfile= new Attachment();
