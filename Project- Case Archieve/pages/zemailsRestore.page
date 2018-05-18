@@ -7,8 +7,8 @@
   <b>
   Are you sure you would like to Process the Restore Process :  </b>
       <br /><br />
-  <apex:commandButton value="Yes" action="{!Restore}" oncomplete="window.top.close();"/>
+  <apex:commandButton value="Yes" action="{!Restore}"/>
       &nbsp;&nbsp;
-  <apex:commandButton value="No" onclick="window.top.close();"/>
+  <apex:commandButton value="No"/>
   </apex:form>
 </apex:page>
