@@ -1,0 +1,103 @@
+<apex:page Controller="zArchiveEmailByCaseController">
+
+	<apex:form >
+	<apex:PageBlock >
+
+
+	<apex:PageBlockButtons >
+        <apex:commandButton value="Archive" action="{!ArchiveCases}" />
+        <apex:commandButton value="Restore" action="{!RestoreCases}" />
+        <apex:commandButton value="Show Cases to be Archived" action="{!show}"	/>
+        <apex:commandButton value="Show Cases to be Restore" action="{!show1}"	/>
+    </apex:PageBlockButtons>
+
+	<apex:pageBlockSection >
+	<apex:selectList label="Case Status" value="{!CaseStatus}" size="1">
+        	 <apex:selectOption itemValue="z" itemLabel="None" />
+            <apex:selectOption itemValue="New" itemLabel="New" />
+            <apex:selectOption itemValue="Working" itemLabel="Working" />
+         <apex:selectOption itemValue="Escalated" itemLabel="Escalated" />
+            <apex:selectOption itemValue="Closed" itemLabel="Closed" />
+
+        </apex:selectList>
+        
+        
+	<apex:selectList label="Case Reason" value="{!CaseReason}" size="1">
+            <apex:selectOption itemValue="z" itemLabel="None" />
+            <apex:selectOption itemValue="Installation" itemLabel="Installation" />
+            <apex:selectOption itemValue="Equipment Complexity" itemLabel="Equipment Complexity" />
+         <apex:selectOption itemValue="Performance" itemLabel="Performance" />
+            <apex:selectOption itemValue="Breakdown" itemLabel="Breakdown" />
+        <apex:selectOption itemValue="Equipment Design" itemLabel="Equipment Design" />
+            <apex:selectOption itemValue="Feedback" itemLabel="Feedback" />
+         <apex:selectOption itemValue="Other" itemLabel="Other" />
+
+        </apex:selectList>
+	<apex:selectList label="Case Origin" value="{!CaseOrigin}" size="1">
+          <apex:selectOption itemValue="z" itemLabel="None" />
+            <apex:selectOption itemValue="Email" itemLabel="Email" />
+            <apex:selectOption itemValue="Phone" itemLabel="Phone" />
+            <apex:selectOption itemValue="Web" itemLabel="Web" />
+
+
+        </apex:selectList>
+
+	<apex:selectList label="Case Created older than" value="{!CaseCreatedOlder}" size="1">
+        
+           <apex:selectOption itemValue="ALL" itemLabel="ALL" />
+            <apex:selectOption itemValue="15" itemLabel="15 Days" />
+            <apex:selectOption itemValue="30" itemLabel="30 Days" />
+         <apex:selectOption itemValue="45" itemLabel="45 Days" />
+            <apex:selectOption itemValue="60" itemLabel="60 Days" />
+         <apex:selectOption itemValue="Current Year" itemLabel="Current Year" />
+            <apex:selectOption itemValue="Last Year" itemLabel="Last Year" />
+    </apex:selectList>
+        
+        
+        <apex:pageBlockSectionItem helpText="Number of cases Archive in a single Batch">
+        <apex:outputLabel value="Record Size"></apex:outputLabel>
+        <apex:selectList label="Record Size" value="{!RecordSize}" size="1">
+            <apex:selectOption itemValue="5" itemLabel="5" />
+            <apex:selectOption itemValue="10" itemLabel="10" />
+            <apex:selectOption itemValue="15" itemLabel="15" />
+         <apex:selectOption itemValue="20" itemLabel="20" />
+        </apex:selectList>
+        </apex:pageBlockSectionItem>
+        
+        <apex:selectList label="Case Closed older than" value="{!CaseClosedOlder}" size="1">
+           
+            <apex:selectOption itemValue="ALL" itemLabel="ALL" />
+            <apex:selectOption itemValue="15" itemLabel="15 Days" />
+            <apex:selectOption itemValue="30" itemLabel="30 Days" />
+         <apex:selectOption itemValue="45" itemLabel="45 Days" />
+            <apex:selectOption itemValue="60" itemLabel="60 Days" />
+         <apex:selectOption itemValue="Current Year" itemLabel="Current Year" />
+            <apex:selectOption itemValue="Last Year" itemLabel="Last Year" />
+        </apex:selectList>
+       
+        
+        
+        
+      </apex:pageBlockSection>
+      
+</apex:PageBlock>
+        
+        <apex:pageBlock id="x" rendered="{!b}" >
+            
+        <apex:pageBlockTable value="{!c}" var="cc">
+            
+            <apex:column value="{!cc.ID}"/>
+            <apex:column value="{!cc.Status}"/>
+            <apex:column value="{!cc.origin}"/>
+            <apex:column value="{!cc.Reason}"/>
+            
+            
+            </apex:pageBlockTable>
+            
+            
+            
+        </apex:pageBlock>
+        
+        
+</apex:form>
+</apex:page>
