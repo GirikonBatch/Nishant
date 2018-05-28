@@ -1,4 +1,4 @@
-public class zArchiveEmailByCaseController {
+ public class zArchiveEmailByCaseController {
     
     public String CaseStatus{get;set;}
     public String CaseReason{get;set;}
@@ -82,7 +82,7 @@ public class zArchiveEmailByCaseController {
                     atch.OwnerId = att.OwnerId;
                     atch.ParentId = ec.ParentId ;
                     
-                    //system.debug('##############'+ atch);
+                    system.debug('##jhjkhjkhkhkjhjk#ghgghgjhgggjgjgjgjhgh###########'+ atch);
                      att_insert.add(atch);
       
                   }
