@@ -1,14 +1,18 @@
-<apex:page Controller="zArchiveEmailByCaseController">
+<apex:page Controller="zArchiveEmailByCaseController" sidebar="false" docType="html-5.0" >
 
 	<apex:form >
-	<apex:PageBlock >
+        <apex:pageMessages >   </apex:pageMessages>
+        <apex:PageBlock title="Archive/Restore Emails">
 
-
-	<apex:PageBlockButtons >
-        <apex:commandButton value="Archive" action="{!ArchiveCases}" />
-        <apex:commandButton value="Restore" action="{!RestoreCases}" />
+	
+	<apex:PageBlockButtons location="bottom">
+        
         <apex:commandButton value="Show Cases to be Archived" action="{!show}"	/>
         <apex:commandButton value="Show Cases to be Restore" action="{!show1}"	/>
+        <apex:commandButton value="Schedule Archive Job" action="{!ScheduleArchive}" disabled="{!SDisArchive}"	/>
+          <apex:commandButton value="Schedule Restore Job" action="{!ScheduleRestore}" disabled="{!SDisRestore}"	/>
+        
+        
     </apex:PageBlockButtons>
 
 	<apex:pageBlockSection >
@@ -75,8 +79,9 @@
             <apex:selectOption itemValue="Last Year" itemLabel="Last Year" />
         </apex:selectList>
        
-        
-        
+        <apex:input label="Preferres Start Date" type="date" value="{!dd}"   />
+      <apex:input label="Preferres Start Time" type="time" value="{!tt}" />
+          
         
       </apex:pageBlockSection>
       
@@ -86,17 +91,27 @@
             
         <apex:pageBlockTable value="{!c}" var="cc">
             
-            <apex:column value="{!cc.ID}"/>
+            
+               <apex:column headerValue="ID">
+<apex:outputLink value="/{!cc.id}">{!cc.id}</apex:outputLink>
+</apex:column>
+           
             <apex:column value="{!cc.Status}"/>
             <apex:column value="{!cc.origin}"/>
             <apex:column value="{!cc.Reason}"/>
+            <apex:column value="{!cc.subject}"/>
             
-            
+           
             </apex:pageBlockTable>
+            
+            <apex:commandButton value="Archive" action="{!ArchiveCases}" disabled="{!DisArchive}" />
+        <apex:commandButton value="Restore" action="{!RestoreCases}" disabled="{!DisRestore}" />
             
             
             
         </apex:pageBlock>
+        
+        
         
         
 </apex:form>

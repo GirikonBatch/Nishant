@@ -8,6 +8,6 @@
       <br /><br />
   <apex:commandButton value="Yes" action="{!parserfile}"/>
       &nbsp;&nbsp;
-  <apex:commandButton value="No"/>
+  <apex:commandButton value="No" action="{!NO}"/>
   </apex:form>
 </apex:page>
